@@ -1,5 +1,7 @@
 # python-fastapi-microservices-cicd
 
+[![Python application test with Github Actions](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml/badge.svg)](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml)
+
 ### Code plan
 
 1. Make file - virtual env `python3 -m venv ~/.venv` or `virtualenv ~/.venv`
