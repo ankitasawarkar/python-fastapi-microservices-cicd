@@ -117,7 +117,7 @@
     \
     **g. all: install lint test deploy**
    
-4. source
+4. **Source**
     1. Build **cli** to code converts the wiki function into a CLI tool to make it user friendly and can test on terminal using **Python Fire library** `./cli-fire.py --help` to test logic.
     ```bash
     touch cli-fire.py
@@ -129,7 +129,24 @@
     `./cli-fire.py --name "Deep_Learning"` --response-->> Deep learning is a subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning.\
     `./cli-fire.py search_wiki "Ankita"`
 
+    2. FastAPI 
+        check all APIs using <url>/docs for swagger docs look 
 5. test
 6. Docker file
 7. Infrastructure as code (IAC)
+8. NLP module Explanation:
+    Library:
+    1. **spaCy:**
+Used for tokenization, lemmatization, and removing stop words and punctuation. Lemmatization reduces words to their base form (e.g., "running" becomes "run").
+    2. **TF-IDF:**
+Calculates the importance of words in a document relative to a collection of documents. Words that appear frequently in a document but rarely in others are given higher importance. Adjust the TfidfVectorizer parameters (e.g., ngram_range, max_df, min_df) to see how they affect the results.
+    3. **Cosine Similarity:**
+Measures the similarity between two vectors (in this case, TF-IDF vectors) by calculating the cosine of the angle between them. A higher cosine similarity score indicates greater similarity.
+
+    **`find_similar_documents` function:**\
+    Takes a query, the TF-IDF matrix, the original documents, and the vectorizer as input. It then transforms the query into a TF-IDF vector, calculates the cosine similarity with all documents, and returns the most similar documents along with their similarity scores.
+    
+    **Apply to a real-world problem:**
+    
+    Consider using this project as a starting point for a real-world problem, such as document retrieval, topic modeling, or text summarization.
 

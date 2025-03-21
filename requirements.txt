@@ -6,3 +6,8 @@ pytest-cov==6.0.0
 wikipedia==1.4.0
 fastapi==0.115.11
 uvicorn==0.34.0
+textblob==0.19.0
+spacy==3.8.4
+scikit-learn==1.6.1
+httpx
+
