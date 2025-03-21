@@ -4,41 +4,46 @@
 
 ### Code plan
 
-1. Make file - virtual env `python3 -m venv ~/.venv` or `virtualenv ~/.venv`
 
-    `virtualenv ~/.venv`\
-    `vim ~/.bashrc` \
-    Sourcing python virtual environment\
-    `source ~/.venv/bin/activate`\
-        OR\
+1. **Make file:**
+    1. **virtual env** \
+        `python3 -m venv ~/.venv` or `virtualenv ~/.venv`
 
-    `python -m venv venv`\
-    `dir venv`\
-    for bin folder\
-    `source venv/bin/activate`\
-    for Scripts folder\
-    `venv/Scripts/activate`\
-    checking for source code directory\
-    `which python` --> /workspaces/python-fastapi-microservices-cicd/venv/bin/python
+        `virtualenv ~/.venv`\
+        `vim ~/.bashrc` \
+        Sourcing python virtual environment\
+        `source ~/.venv/bin/activate`\
+            OR\
+    
+        `python -m venv venv`\
+        `dir venv`\
+        for bin folder\
+        `source venv/bin/activate`\
+        for Scripts folder\
+        `venv/Scripts/activate`\
+        checking for source code directory\
+        `which python` --> /workspaces/python-fastapi-microservices-cicd/venv/bin/python
+    
+    2. **Requirement, Dockerfile & Makefile**
+    
+        `touch requirements.txt`\
+        `touch Dockerfile`\
+        `touch Makefile`
+        1. Makefile Commands : The `Makefile` includes commonly used commands to streamline project setup, testing, and deployment. Usage: Run the commands using:
+            ```bash
+            make <target>
+            ```
+        2.  To add lifecycle of project `make install`, `make deploy` we can see all command of `make all` will give #install commands #flake8 or #pylint #test #deploy\
 
-2. requirement.txt
+    3. **for logic and main start file**
+        `mkdir mylib`\
+        `touch mylib/__init__.py`\
+        `touch mylib/logic.py`\
+        `touch main.py`\
 
-    `touch requirements.txt`\
-    `touch Dockerfile`\
-    `touch Makefile`\
-        --> Makefile Commands : The `Makefile` includes commonly used commands to streamline project setup, testing, and deployment. Usage: Run the commands using:
-        ```bash
-        make <target>
-        ```
-        --> to add lifecycle of project `make install`, `make deploy` we can see all command of `make all` will give #install commands #flake8 or #pylint #test #deploy\
-
- 
-    `mkdir mylib`\
-    `touch mylib/__init__.py`\
-    `touch mylib/logic.py`\
-    `touch main.py`\
-
-3.  Library Explanation & Usage: 📌 These libraries help with data fetching, testing, linting, formatting, and building CLI tools efficiently. Freeze the lib vesions `pip freeze | less` and note it to file.
+2. **requirement.txt**
+    
+    **Library Explanation & Usage:** 📌 These libraries help with data fetching, testing, linting, formatting, and building CLI tools efficiently. Freeze the lib vesions `pip freeze | less` and note it to file.
 
     **wikipedia**: A Python library to fetch and parse data from Wikipedia.
     ```python
@@ -74,7 +79,44 @@
     ```bash
     python script.py --name=Ankita  
     ```
-
+4. **Makefile steps**\
+        Change in .github/devops.yml as `make <target>` then commit and push code. After that CI/CD pipeline process start build automatically. Same follow to other steps as well.
+    ```
+    git add .github
+    git add *
+    git commit -m "lint process check"
+    git push
+    ```
+    **a. install**\
+        ```
+        pip install --upgrade pip &&\
+    	pip install -r requirements.txt
+    	```\
+        
+    \
+    \
+    **b. format**\
+    `black *.py mylib/*py`
+    \
+    \
+    **c. lint**\
+    `pylint --disable=R,C *.py mylib/*py`
+    \
+    \
+    **d. test**\
+    `python -m pytest -vv --cov=mylib test_logic.py`
+    \
+    \
+    **e. build:**\
+	#build container 
+	\
+    \
+    **f. deploy:**\
+	#deploy
+	\
+    \
+    **g. all: install lint test deploy**
+   
 4. source
 5. test
 6. Docker file
