@@ -3,6 +3,7 @@ install:
 	pip install --upgrade pip &&\
 	pip install -r requirements.txt
 	# Download SpaCy model
+	python -m textblob.download_corpora
 	python -m spacy download en_core_web_sm
 format:
 	#format code
