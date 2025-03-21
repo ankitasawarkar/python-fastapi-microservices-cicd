@@ -43,7 +43,7 @@
 
 2. **requirement.txt**
     
-    **Library Explanation & Usage:** 📌 These libraries help with data fetching, testing, linting, formatting, and building CLI tools efficiently. Freeze the lib vesions `pip freeze | less` and note it to file.
+    **Library Explanation & Usage for project:** 📌 These libraries help with data fetching, testing, linting, formatting, and building CLI tools efficiently. Freeze the lib vesions `pip freeze | less` and note it to file.
 
     **wikipedia**: A Python library to fetch and parse data from Wikipedia.
     ```python
@@ -126,7 +126,8 @@
     ```
     Test function:
 
-    `./cli-fire.py --name "Deep_Learning"` --response-->> Deep learning is a subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning.
+    `./cli-fire.py --name "Deep_Learning"` --response-->> Deep learning is a subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning.\
+    `./cli-fire.py search_wiki "Ankita"`
 
 5. test
 6. Docker file
