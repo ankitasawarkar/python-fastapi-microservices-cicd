@@ -118,6 +118,16 @@
     **g. all: install lint test deploy**
    
 4. source
+    1. Build **cli** to code converts the wiki function into a CLI tool to make it user friendly and can test on terminal using **Python Fire library** `./cli-fire.py --help` to test logic.
+    ```bash
+    touch cli-fire.py
+    chmod +x cli-fire.py
+    ./cli-fire.py --help
+    ```
+    Test function:
+
+    `./cli-fire.py --name "Deep_Learning"` --response-->> Deep learning is a subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning.
+
 5. test
 6. Docker file
 7. Infrastructure as code (IAC)
