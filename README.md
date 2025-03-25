@@ -2,7 +2,7 @@
 
 [![Python application test with Github Actions](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml/badge.svg)](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml)
 
-[![Python application test with Github Actions](https://codebuild.us-east-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiY2RXa0RRUy9TbmtpSG50V3J6TldIdzU3alZlMlpTZFc5eEMzTFAwaXR6ZmVmU2s1b2liQ0JuWEdSdys5S1g4cnZZYUpnMmNMYnljeHRyM1g3a0pvYlhnPSIsIml2UGFyYW1ldGVyU3BlYyI6Ikx2WGxsN0xlZVpvVm5XR2IiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+![Python application test with Github Actions](https://codebuild.us-east-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiY2RXa0RRUy9TbmtpSG50V3J6TldIdzU3alZlMlpTZFc5eEMzTFAwaXR6ZmVmU2s1b2liQ0JuWEdSdys5S1g4cnZZYUpnMmNMYnljeHRyM1g3a0pvYlhnPSIsIml2UGFyYW1ldGVyU3BlYyI6Ikx2WGxsN0xlZVpvVm5XR2IiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 
 ### Code plan
 
@@ -31,11 +31,11 @@
         `touch requirements.txt`\
         `touch Dockerfile`\
         `touch Makefile`
-        1. Makefile Commands : The `Makefile` includes commonly used commands to streamline project setup, testing, and deployment. Usage: Run the commands using:
+        1. Makefile Commands: The `Makefile` includes commonly used commands to streamline project setup, testing, and deployment. Usage: Run the commands using:
             ```bash
             make <target>
             ```
-        2.  To add lifecycle of project `make install`, `make deploy` we can see all command of `make all` will give #install commands #flake8 or #pylint #test #deploy\
+        2.  To add the lifecycle of the project `make install`, `make deploy` we can see all commands of `make all` will give #install commands #flake8 or #pylint #test #deploy\
 
     3. **for logic and main start file**
         `mkdir mylib`\
@@ -82,52 +82,21 @@
     python script.py --name=Ankita  
     ```
 4. **Makefile steps**\
-        Change in .github/devops.yml as `make <target>` then commit and push code. After that CI/CD pipeline process start build automatically. Same follow to other steps as well.
+        Change in .github/devops.yml as `make <target>` then commit and push code. After that CI/CD pipeline process start build automatically. Same follows to other steps as well. <target> = [install, format, lint, test, build, run, deploy, all]
     ```
     git add .github
     git add *
     git commit -m "lint process check"
     git push
-    ```
-    **a. install**\
-        ```
-        pip install --upgrade pip &&\
-    	pip install -r requirements.txt
-    	```\
-        
-    \
-    \
-    **b. format**\
-    `black *.py mylib/*py`
-    \
-    \
-    **c. lint**\
-    `pylint --disable=R,C *.py mylib/*py`
-    \
-    \
-    **d. test**\
-    `python -m pytest -vv --cov=mylib test_logic.py`
-    \
-    \
-    **e. build:**\
-	#build container 
-	\
-    \
-    **f. deploy:**\
-	#deploy
-	\
-    \
-    **g. all: install lint test deploy**
-   
+    ```  
 4. **Source**
-    1. Build **cli** to code converts the wiki function into a CLI tool to make it user friendly and can test on terminal using **Python Fire library** `./cli-fire.py --help` to test logic.
+    1. Build **cli** to code converts the wiki function into a CLI tool to make it user-friendly and can test on the terminal using **Python Fire library** `./cli-fire.py --help` to test logic.
     ```bash
     touch cli-fire.py
     chmod +x cli-fire.py
     ./cli-fire.py --help
     ```
-    Test function:
-
+    Test function:\
     `./cli-fire.py --name "Deep_Learning"` --response-->> Deep learning is a subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning.\
     `./cli-fire.py search_wiki "Ankita"`
 
@@ -136,9 +105,7 @@
 5. test
     ```bash
     # git Commands
-    history
-    
-    
+    history  
     ```
 6. Docker file
    **Docker commands:**\
@@ -159,20 +126,25 @@
             
             Amazon ECR >> Create Repositories >> <ins>my_first_container_wiki</ins>
             
-            `View Push Command` copy all command into Makefile build section.
+            `View Push Command` copies all commands into the Makefile build section.
 
         2. **CodeBuild**
         
-            Developer Tools >> CodeBuild >> Create Build projects >> <ins>Deploy-python-microservice-cicd</ins>
+           Developer Tools >> CodeBuild >> Create Build projects >> <ins>Deploy-python-microservice-cicd</ins>
+
+     		buildspec.yml file added
             
-            ![](images/1.1png)
-            ![](images/1.2png)
-            ![](images/1.3png)
-            ![](images/1.4png)
-            ERROR:-
-            ![](images/1.5png)
-            Solution:-
-            ![](images/1.6png)
+<img src="images/1.1.png" width="400" />
+<img src="images/1.2.png" width="400" />
+<img src="images/1.3.png" width="400" />
+<img src="images/1.4.png" width="400" />
+<img src="images/1.5.png" width="400" />
+
+ERROR:-            
+<img src="images/1.6.png" width="400" />
+
+Solution:-\
+<img src="images/1.7.png" width="400" />
     
 8. NLP module Explanation:
     Library:
