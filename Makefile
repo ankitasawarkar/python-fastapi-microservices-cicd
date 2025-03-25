@@ -23,4 +23,8 @@ run:
 	docker run -p 8080:8080 deploy-fastapi
 deploy:
 	#deploy
+	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 210226313522.dkr.ecr.us-east-2.amazonaws.com
+	docker build -t my_first_container_wiki .
+	docker tag my_first_container_wiki:latest 210226313522.dkr.ecr.us-east-2.amazonaws.com/my_first_container_wiki:latest
+	docker push 210226313522.dkr.ecr.us-east-2.amazonaws.com/my_first_container_wiki:latest
 all: install lint test deploy

@@ -132,7 +132,25 @@
     2. FastAPI 
         check all APIs using <url>/docs for swagger docs look 
 5. test
+    ```bash
+    # git Commands
+    history
+    
+    
+    ```
 6. Docker file
+   **Docker commands:**\
+    `docker build -t <image-name> .` - latest or :v1 version & . indicate current directory\
+    `docker image ls` - List of images \
+    Run image with port:\
+    `docker run -d -p 8000:8000 <image-name>`\
+    `docker ps` - Check running ports\
+    `docker logs <container-id>` - Check the logs\
+    `docker stop $(docker ps -q)` - Stop all running containers\
+    `docker rmi <inage-id>`\
+    `docker rmi $(docker images -q)` - Remove all containers\
+    `docker system prune -a --volumes -f` - Force Remove All Images (Even Dangling or Intermediate Layers)\
+    
 7. Infrastructure as code (IAC)
 8. NLP module Explanation:
     Library:
