@@ -2,6 +2,8 @@
 
 [![Python application test with Github Actions](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml/badge.svg)](https://github.com/ankitasawarkar/python-fastapi-microservices-cicd/actions/workflows/devops.yml)
 
+[![Python application test with Github Actions](https://codebuild.us-east-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiY2RXa0RRUy9TbmtpSG50V3J6TldIdzU3alZlMlpTZFc5eEMzTFAwaXR6ZmVmU2s1b2liQ0JuWEdSdys5S1g4cnZZYUpnMmNMYnljeHRyM1g3a0pvYlhnPSIsIml2UGFyYW1ldGVyU3BlYyI6Ikx2WGxsN0xlZVpvVm5XR2IiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+
 ### Code plan
 
 
@@ -152,6 +154,26 @@
     `docker system prune -a --volumes -f` - Force Remove All Images (Even Dangling or Intermediate Layers)\
     
 7. Infrastructure as code (IAC)
+    1. ***AWS***
+        1. **ECR**
+            
+            Amazon ECR >> Create Repositories >> <ins>my_first_container_wiki</ins>
+            
+            `View Push Command` copy all command into Makefile build section.
+
+        2. **CodeBuild**
+        
+            Developer Tools >> CodeBuild >> Create Build projects >> <ins>Deploy-python-microservice-cicd</ins>
+            
+            ![](images/1.1png)
+            ![](images/1.2png)
+            ![](images/1.3png)
+            ![](images/1.4png)
+            ERROR:-
+            ![](images/1.5png)
+            Solution:-
+            ![](images/1.6png)
+    
 8. NLP module Explanation:
     Library:
     1. **spaCy:**
@@ -168,3 +190,7 @@ Measures the similarity between two vectors (in this case, TF-IDF vectors) by ca
     
     Consider using this project as a starting point for a real-world problem, such as document retrieval, topic modeling, or text summarization.
 
+## Reference
+
+* [Getting Started with AWS - Create Continuous Delivery Pipeline](https://aws.amazon.com/getting-started/hands-on/create-continuous-delivery-pipeline/)
+* [AWS- Connect GitHub using OAuth (console)](https://docs.aws.amazon.com/codebuild/latest/userguide/oauth-app-github.html)
