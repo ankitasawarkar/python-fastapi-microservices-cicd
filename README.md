@@ -128,24 +128,31 @@
             
             `View Push Command` copies all commands into the Makefile build section.
 
-        2. **CodeBuild**
+        2. Continous Integration using **CodeBuild**
         
            Developer Tools >> CodeBuild >> Create Build projects >> <ins>Deploy-python-microservice-cicd</ins>
 
      		buildspec.yml file added
+     		
+     		<img src="images/1.1.png" width="400" />
+            <img src="images/1.2.png" width="400" />
+            <img src="images/1.3.png" width="400" />
+            <img src="images/1.4.png" width="400" />
+            <img src="images/1.5.png" width="400" />
             
-<img src="images/1.1.png" width="400" />
-<img src="images/1.2.png" width="400" />
-<img src="images/1.3.png" width="400" />
-<img src="images/1.4.png" width="400" />
-<img src="images/1.5.png" width="400" />
-
-ERROR:-            
-<img src="images/1.6.png" width="400" />
-
-Solution:-\
-<img src="images/1.7.png" width="400" />
-    
+            ERROR:-            
+            <img src="images/1.6.png" width="400" />
+            
+            Solution:-
+            <img src="images/1.7.png" width="400" />
+     		
+     	3. After Continous Delivery its time to proceed for Paas for **Continous Deploy** using **ECS, ECR and, App Runner** 
+     	     <img src="images/2.1.png" width="400" />
+            <img src="images/2.2.png" width="400" />
+            <img src="images/2.3.png" width="400" />
+            
+            Finally able to access project: https://xsb3usqq7s.us-east-2.awsapprunner.com/docs
+            
 8. NLP module Explanation:
     Library:
     1. **spaCy:**
